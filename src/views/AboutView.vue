@@ -184,21 +184,19 @@
               <v-list-item-title class="text-h5 mb-1">
                 Total:{{ BookInfo.total }}
               </v-list-item-title>
-             
-                <v-btn
-                  color="#a03037"
-                  text
-                  type="Submit"
-                  @click="addToOrder(BookInfo.total)"
-                >
-                  PLACEORDER
-                </v-btn>
-              
+
+              <v-btn
+                color="#a03037"
+                text
+                type="Submit"
+                @click="addToOrder(BookInfo.total)"
+              >
+                PLACEORDER
+              </v-btn>
             </v-card>
           </v-expansion-panel-content>
         </v-expansion-panel>
       </v-expansion-panels>
-     
     </section>
     <section v-else class="center">
       <v-list-item-title class="text-h5 mb-1"> Yourcard </v-list-item-title>
@@ -214,7 +212,7 @@
 <script>
 import CartService from "../service/CartService";
 //import CustomerDetails from "../views/CustomerDetails.vue";
- import OrderService from "../service/OrderService";
+import OrderService from "../service/OrderService";
 export default {
   name: "AboutView",
 
@@ -225,8 +223,8 @@ export default {
     return {
       formValues: {
         userId: "23",
-         address:"XYZ",
-         price:""
+        address: "XYZ",
+        price: "",
       },
 
       count: 0,
@@ -316,10 +314,13 @@ export default {
       console.log(this.formValues);
       const data = this.formValues;
       OrderService.addOrder(data)
-        .then((response) => {
-          console.log(response);
-        },()=>this.$router.push({name: "PlaceOrder"}))
-         
+        .then(
+          (response) => {
+            console.log(response);
+          },
+          () => this.$router.push({ name: "PlaceOrder" })
+        )
+
         .catch((error) => {
           console.log(error);
           alert("WARNING!! Error while adding the Added Order !");

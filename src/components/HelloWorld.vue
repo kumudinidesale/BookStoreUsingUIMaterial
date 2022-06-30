@@ -1,5 +1,5 @@
 <template>
-  <form class="form1" >
+  <form class="form1">
     <v-card
       :loading="loading"
       class="mx-auto my-12"
@@ -19,11 +19,7 @@
 
       <v-container fluid class="card">
         <v-row dense>
-          <v-col
-            v-for="BookInfos in BookInfo"
-            :key="BookInfos.bookId"
-           
-          >
+          <v-col v-for="BookInfos in BookInfo" :key="BookInfos.bookId">
             <v-card>
               <v-img
                 :src="BookInfos.bookImage"
@@ -41,19 +37,20 @@
               </v-card-text>
 
               <v-row align="center" justify="space-around">
-                <v-btn color="#a03037" depressed
-  elevation="2"
-  small
-   @click="AddtoCart(BookInfos.bookId, BookInfos.price)"
-  >  <v-icon>mdi-cart</v-icon>Add To Cart </v-btn>
-                <v-btn 
-  elevation="2"
-  small
-  text >  <v-icon>mdi-cards-heart-outline</v-icon>WhishList</v-btn>
+                <v-btn
+                  color="#a03037"
+                  depressed
+                  elevation="2"
+                  small
+                  @click="AddtoCart(BookInfos.bookId, BookInfos.price)"
+                >
+                  <v-icon>mdi-cart</v-icon>Add To Cart
+                </v-btn>
+                <v-btn elevation="2" small text>
+                  <v-icon>mdi-cards-heart-outline</v-icon>WhishList</v-btn
+                >
               </v-row>
             </v-card>
-
-            
           </v-col>
         </v-row>
       </v-container>
@@ -80,7 +77,7 @@ export default {
         { src: "../assets/Image 7.png", flex: 6 },
         { src: "../assets/Image 11.png", flex: 6 },
         { src: "../assets/Image 10.png", flex: 6 },
-         { src: "../assets/Image 18.png", flex: 6 },
+        { src: "../assets/Image 18.png", flex: 6 },
       ],
     };
   },
@@ -118,7 +115,7 @@ export default {
         });
     },
   },
-  
+
   created() {
     this.getBook();
     this.getContactCount();
