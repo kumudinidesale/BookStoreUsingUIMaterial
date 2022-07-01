@@ -27,13 +27,32 @@
         </tbody>
       </template>
     </v-simple-table>
-    <router-link to="/">
-      <v-btn color="#a03037"> Continue Shopping </v-btn></router-link
-    >
+   
+      <v-btn color="#a03037" 
+       type="Submit"
+       @click="remove()"> 
+       Continue Shopping </v-btn>
+    
   </v-card>
 </template>
 <script>
+import CartService from "../service/CartService"
 export default {
   name: "PlaceOrder",
-};
+
+ methods:{
+    remove(){
+     
+      CartService.deleteOrder()
+         .then((data) => {
+          console.log(data);
+         this.$router.push({ name: "home" })
+       
+         })
+      
+          
+    },
+ },
+ };
+  
 </script>

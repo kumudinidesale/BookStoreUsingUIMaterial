@@ -185,27 +185,62 @@
                 Total:{{ BookInfo.total }}
               </v-list-item-title>
 
-              <v-btn
+              <router-link to="/placeOrder"> <v-btn
                 color="#a03037"
                 text
                 type="Submit"
                 @click="addToOrder(BookInfo.total)"
               >
                 PLACEORDER
-              </v-btn>
+              </v-btn></router-link>
             </v-card>
           </v-expansion-panel-content>
         </v-expansion-panel>
       </v-expansion-panels>
     </section>
-    <section v-else class="center">
-      <v-list-item-title class="text-h5 mb-1"> Yourcard </v-list-item-title>
+    <section v-else>
+       <v-card
+    class="mx-auto"
+    max-width="344"
+   
+  >
+  
+<v-row
+    align="center"
+     justify="center"
+  >
+   <v-col
+          cols="20"
+        >
+    <v-card-text>
+ 
+      <h2 color="#a03037" >Your Card</h2>
+     
+      <v-icon x-large   >mdi-cart-off</v-icon>
+     
+      <div class="text--primary">
+      Your cart is empty, fill it up!
+      </div>
+     
+    </v-card-text>
+   </v-col>
+     </v-row>
+    <v-card-actions>
+       <router-link to="/">
+        <v-btn color="#a03037"> BackToHome </v-btn></router-link
+      >
+      
+    </v-card-actions>
+  
+  </v-card>
 
-      <v-img src="../../public/assets/emptycart.webp" height="200px"></v-img>
+      <!-- <v-list-item-title class="text-h5 mb-1"> Yourcard </v-list-item-title> -->
+
+     <!-- <v-icon>mdi-cart-off</v-icon>
       <v-card-subtitle>Your cart is empty, fill it up!</v-card-subtitle>
       <router-link to="/">
         <v-btn color="#a03037"> BackToHome </v-btn></router-link
-      >
+      > -->
     </section>
   </div>
 </template>

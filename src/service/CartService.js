@@ -18,5 +18,8 @@ class CartService {
   updateQuantity(cartId, quantity, total) {
     return axios.put(`${BASE_URL}/UpdateQunatity/${cartId}/${quantity}/${total}`);
   }
+  deleteOrder() {
+    return axios.delete(`${BASE_URL}/deleteAll`)
+}
 }
 export default new CartService();
