@@ -1,4 +1,6 @@
 <template>
+<div>
+<Header/>
   <v-card class="mx-auto" max-width="450">
     <v-img src="../../public/assets/success.png" height="200px"></v-img>
 
@@ -34,12 +36,18 @@
        Continue Shopping </v-btn>
     
   </v-card>
+</div>
 </template>
 <script>
 import CartService from "../service/CartService"
+import Header from "../components/Header.vue"
 export default {
   name: "PlaceOrder",
+ components: {
+   
+    Header,
 
+  },
  methods:{
     remove(){
      

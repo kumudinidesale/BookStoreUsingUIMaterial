@@ -1,6 +1,9 @@
 <template>
+<div>
+<Header/>
   <div>
-    <section v-if="count > 0">
+    
+    <section v-if="count > 0"  justify="center">
       <v-expansion-panels v-model="panel" :disabled="disabled" multiple>
         <v-expansion-panel>
           <v-expansion-panel-header>Your Cart</v-expansion-panel-header>
@@ -243,17 +246,20 @@
       > -->
     </section>
   </div>
+  </div>
 </template>
 <script>
 import CartService from "../service/CartService";
-//import CustomerDetails from "../views/CustomerDetails.vue";
+import Header from "../components/Header.vue"
 import OrderService from "../service/OrderService";
 export default {
-  name: "AboutView",
+  name: "CartView",
 
-  //    components: {
-  // CustomerDetails,
-  // },
+  components: {
+   
+    Header,
+
+  },
   data() {
     return {
       formValues: {

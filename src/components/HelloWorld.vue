@@ -2,9 +2,10 @@
   <form class="form1">
     <v-card
       :loading="loading"
-      class="mx-auto my-12"
+      class="mx-auto "
       max-width="100vw"
       max-height="474"
+      center
     >
       <template slot="progress">
         <v-progress-linear
@@ -18,7 +19,7 @@
       </div>
 
       <v-container fluid class="card">
-        <v-row dense>
+        <v-row >
           <v-col v-for="BookInfos in BookInfo" :key="BookInfos.bookId">
             <v-card>
               <v-img
